@@ -1,0 +1,155 @@
+.paymentPage{
+    background-color : #eaedfc;
+    padding: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pageContainer{
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.pageTitle{
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1rem 3rem;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+.addressSection{
+    display: flex;
+    flex-direction : column;
+    gap: 0.1rem;
+    font-size: 1.2rem;
+}
+
+.sectionName{
+    padding: 0.7rem 3rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+
+}
+
+.sectionInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: #4b4444;
+    padding: 0rem 5rem;
+}
+
+.cardDetails{
+    font-size: 1.3rem;
+}
+
+.cardInfo{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0rem 1.5rem;
+}
+
+
+.cardAuth{
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+}
+
+
+
+.cartContainer{
+    background-color: #fff;
+    padding: 1rem 3rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+}
+
+.itemBtn{
+    width: 15%;
+    padding: 0.9rem 0.7rem;
+    font-size: 1.1rem;
+    border-radius: 0.625rem;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    justify-content: center;
+    background: rgb(236,203,40);
+}
+
+.itemImg{
+    border-radius: 1rem;
+    width: 15rem;
+    height: 15rem;
+}
+
+.cartTitle{
+    font-size: 1.7rem;
+    font-weight: 500;
+    padding-bottom: 1rem;
+}
+
+.itemMain{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.itemContainer{
+    display: flex;
+    gap: 2rem;
+}
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.itemInfo{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.itemPrice{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.allItmeInfo{
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 3rem 5rem;
+}
+
+.allItmeInfoWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:2rem;    
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.checkoutBtn{
+        background: rgb(236,203,40);
+        font-size: 1.3rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0.625rem;
+        border: none;
+        outline: none;
+        cursor: pointer;
+}

@@ -1,0 +1,51 @@
+.homePage {
+    width: 100%;
+    background: #eaedfc;
+    margin: 0;
+    padding-top: 4rem;
+
+  }
+  
+  .bannerImg {
+    width: 100%;
+    height: 75vh;
+    -webkit-mask-image: linear-gradient(
+     to bottom,
+      rgba(0, 0, 0, 2),
+      rgba(0, 0, 0, 0.95),
+      rgba(0, 0, 0, 0.85),
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0)
+    );
+  }
+
+  .btnWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .pageBtn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    background-color: #060623;
+    color: white;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    border-radius: 0.625rem;
+  }
+
+  .pageNum{
+    border-radius: 50%;
+    padding: 0.3rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  

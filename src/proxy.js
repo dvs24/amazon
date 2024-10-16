@@ -1,4 +1,4 @@
-const proxy = "http://localhost:8000";
+const proxy = "http://localhost:8123";
 
 
 export default proxy;

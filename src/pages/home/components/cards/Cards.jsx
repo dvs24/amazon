@@ -54,7 +54,7 @@ const Cards = ({ currentPage, setCurrentPage }) => {
                 src={card.images[0]}
                 alt="CardImage"
                 className={styles.cardImg}
-              />
+              />  
             </div>
             <div className={styles.title}>{card.title}</div>
             <div className={styles.desc}>{card.description}</div>

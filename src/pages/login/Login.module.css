@@ -20,7 +20,7 @@
 }
 
 .title{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
@@ -31,7 +31,7 @@
     border-radius: 0.625rem;
     gap: 1rem;
     width: 80%;
-    padding: 3rem 2rem;
+    padding: 1.5rem;
 }
 
 .inputWrapper{
@@ -47,16 +47,16 @@
 }
 
 .inputField input{
-    padding: 0.7rem;
+    padding: 0.5rem;
     border: none;
     border-radius: 0.625rem;
     background-color: #eaedfc;
     outline: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .labelText{
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -68,7 +68,7 @@
     outline: none;
     cursor: pointer;
     border-radius: 0.625rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: rgb(236, 203, 40);
 }
 .info{
@@ -76,8 +76,8 @@
 }
 
 .registerBtn{
-    padding: 0.6rem;
+    padding: 0.4rem;
     width: 60%;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 

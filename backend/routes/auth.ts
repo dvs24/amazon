@@ -84,12 +84,10 @@ router.post("/signin", async (req: any, res: any) => {
       }
     );
 
-    if (token) {
-      user.token = token;
-      await user.save();
-    }
-
-    return res.status(200).send({ message: "Login successfully" });
+    return res.status(200).send({ message: "Login successfully", data : {
+      token : token,
+      email : email
+    } });
   } catch (error) {
     console.log("signin :", error);
     return res.status(500).send({ message: "Internal server error" });

@@ -1,4 +1,4 @@
-.login{
+.login {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -6,7 +6,7 @@
     justify-content: center;
 }
 
-.mainContainer{
+.mainContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,71 +14,71 @@
     width: 30%;
 }
 
-.logoImg{
+.logoImg {
     width: 30%;
     height: 15%;
 }
 
-.title{
-    font-size: 2rem;
+.title {
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
-.loginWrapper{
+.loginWrapper {
     display: flex;
     flex-direction: column;
     border: 0.1rem solid #D7D7D7;
     border-radius: 0.625rem;
     gap: 0.8rem;
     width: 80%;
-    padding: 3rem 2rem;
+    padding: 1.5rem;
+    max-height: 65vh;
 }
 
-.inputWrapper{
+.inputWrapper {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
 }
 
-.inputField{
+.inputField {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.inputField input{
-    padding: 0.7rem;
+.inputField input {
+    padding: 0.5rem;
     border: none;
     border-radius: 0.625rem;
     background-color: #eaedfc;
     outline: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-.labelText{
-    font-size: 1.5rem;
+.labelText {
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
-.loginBtn{
+.loginBtn {
     width: 80%;
     margin: auto;
     padding: 0.6rem;
     border: none;
     outline: none;
     cursor: pointer;
-
     border-radius: 0.625rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: rgb(236, 203, 40);
 }
-.info{
+
+.info {
     text-align: center;
 }
 
-.registerBtn{
-    padding: 0.6rem;
+.registerBtn {
+    padding: 0.4rem;
     width: 60%;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
-

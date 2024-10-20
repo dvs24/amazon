@@ -20,6 +20,19 @@ export const getProducts = createAsyncThunk("getProducts", async () => {
   return responseBody.products;
 });
 
+export const userAuthorize = createAsyncThunk("userAuthorize", async (token) => {
+  const response = await fetch(`${proxy}/products/?token=${token}`, {
+    method : "GET",
+    headers : {
+      "Content-Type" : "application/json"
+    }
+  })
+
+  const status = response.status;
+  const responseBody = await response.json();
+  return status;
+})
+
 export const saveDelieveryInfo = createAsyncThunk("saveDelieveryInfo" ,  async (data) => {
   const response = await fetch(`${proxy}/products/delievery`, {
     method :"POST",

@@ -1,32 +1,42 @@
 import express from "express";
 import products from "../models/products";
 import delievery from "../models/delieverInfo";
+import jwt from "jsonwebtoken";
 
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  products
-    .find()
-    .then((data) => {
-      return res.status(200).send(data);
-    })
-    .catch((err) => {
-      return res.status(500).send(err.message);
+  try {
+    const { token } = req.query as { token: string };
+
+    if (!token) {
+      return res.status(400).send({
+        messgae: "Token is required",
+      });
+    }
+
+    const isAuthorizeuser = jwt.verify( token , process.env.JWT_SECRET!);
+
+    if (isAuthorizeuser) {
+      return res.status(200).send({
+        message: "Authorize User",
+      });
+    } else {
+      return res.status(401).send({
+        message: "Unauthorize User",
+      });
+    }
+  } catch (error) {
+    return res.status(500).send({
+      message: "Internal Server Error",
     });
+  }
 });
 
 router.post("/delievery", async (req: any, res: any) => {
-  const {
-    fullName,
-    state,
-    city,
-    apartment,
-    landMark,
-    area,
-    phoneNumber,
-  } = req.body;
+  const { fullName, state, city, apartment, landMark, area, phoneNumber } =
+    req.body;
   try {
-    
     if (!fullName) {
       return res.status(400).send({ message: "Full name is reuired" });
     }
@@ -64,11 +74,11 @@ router.post("/delievery", async (req: any, res: any) => {
     }).save();
 
     if (newDelievery) {
-      return res.status(201).send({message : "Details saved successfully"})
+      return res.status(201).send({ message: "Details saved successfully" });
     }
   } catch (error: any) {
     console.log("delievery :", error);
-    return res.status(500).send({ message: "An unexpected error occurred"});
+    return res.status(500).send({ message: "An unexpected error occurred" });
   }
 });
 

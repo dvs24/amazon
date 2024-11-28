@@ -5,7 +5,8 @@ const initialState = {
   productsData: [],
   itemList: [],
   userInfo: {},
-  delieveryMsg : null
+  delieveryMsg : null,
+  inputVal : ""
 };
 
 export const getProducts = createAsyncThunk("getProducts", async () => {
@@ -59,6 +60,9 @@ const homePageSlice = createSlice({
     addUserInfo: (state, action) => {
       state.userInfo = action.payload;
     },
+    addInputVal : (state , action) => {
+      state.inputVal = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(getProducts.fulfilled, (state, action) => {
@@ -73,6 +77,6 @@ const homePageSlice = createSlice({
   },
 });
 
-export const { addItemToList, addUserInfo, removeItemToList } = homePageSlice.actions;
+export const { addItemToList, addUserInfo, removeItemToList, addInputVal } = homePageSlice.actions;
 
 export default homePageSlice.reducer;

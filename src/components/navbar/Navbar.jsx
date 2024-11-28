@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
 import logo from "../../assets/logo.svg";
 import cart from "../../assets/cartIcon.png";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addInputVal } from "../../redux/slices/homeSlice";
 
 const Navbar = () => {
   const itemList = useSelector((state) => state.homePage.itemList);
+  const dispatch = useDispatch();
 
-  const handleCartIcon = () => {};
-
+  const [searchVal ,setSearchVal] = useState("");
+  
+  const handleSearch = () => {
+    dispatch(addInputVal(searchVal))
+  }
+  
   return (
     <div className={styles.navBar}>
       <Link to="/">
@@ -28,8 +34,9 @@ const Navbar = () => {
           type="text"
           className={styles.searchInput}
           placeholder="Search Products"
-        />
-        <button className={styles.searchBtn}>search</button>
+          onChange={(e) => setSearchVal(e.target.value)}
+        />  
+        <button className={styles.searchBtn} onClick={handleSearch}>search</button>
       </div>
 
       <div className={styles.textWrapper}>

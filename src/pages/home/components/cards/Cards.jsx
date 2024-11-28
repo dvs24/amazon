@@ -7,6 +7,7 @@ const Cards = ({ currentPage, setCurrentPage }) => {
   const dispatch = useDispatch();
   const productsData = useSelector((state) => state.homePage.productsData);
   const itemList = useSelector((state) => state.homePage.itemList);
+  const inputVal = useSelector((state) => state.homePage.inputVal);
 
   const [allProducts, setAllProducts] = useState([]);
   const [disabledButtons, setDisabledButtons] = useState({});
@@ -19,13 +20,26 @@ const Cards = ({ currentPage, setCurrentPage }) => {
 
   useEffect(() => {
     if (productsData.length > 0) {
-      setAllProducts(productsData.slice(currentPage * 12, currentPage * 12 + 12));
+      setAllProducts(
+        productsData.slice(currentPage * 12, currentPage * 12 + 12),
+      );
     }
   }, [currentPage, productsData]);
 
   useEffect(() => {
+    if (inputVal?.length > 0) {
+      const filteredData = allProducts.filter((item) => {
+        return item.title.toLowerCase().includes(inputVal.toLowerCase());
+      });
+      setAllProducts(filteredData);
+    } else {
+      setAllProducts(productsData.slice(0, 12));
+    }
+  }, [inputVal]);
+
+  useEffect(() => {
     const disabled = {};
-    itemList.forEach(item => {
+    itemList.forEach((item) => {
       disabled[item.id] = true;
     });
     setDisabledButtons(disabled);
@@ -41,7 +55,7 @@ const Cards = ({ currentPage, setCurrentPage }) => {
     };
 
     dispatch(addItemToList(itemData));
-    setDisabledButtons(prev => ({ ...prev, [card.id]: true }));
+    setDisabledButtons((prev) => ({ ...prev, [card.id]: true }));
   };
 
   return (
@@ -54,7 +68,7 @@ const Cards = ({ currentPage, setCurrentPage }) => {
                 src={card.images[0]}
                 alt="CardImage"
                 className={styles.cardImg}
-              />  
+              />
             </div>
             <div className={styles.title}>{card.title}</div>
             <div className={styles.desc}>{card.description}</div>
@@ -72,7 +86,14 @@ const Cards = ({ currentPage, setCurrentPage }) => {
           </div>
         ))
       ) : (
-        <div style={{ fontSize: "2rem", textAlign: "center", width: "100vw", marginBottom: '3rem' }}>
+        <div
+          style={{
+            fontSize: "2rem",
+            textAlign: "center",
+            width: "100vw",
+            marginBottom: "3rem",
+          }}
+        >
           Loading Products...
         </div>
       )}

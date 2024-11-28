@@ -12,7 +12,18 @@ const port = process.env.PORT || 8000;
 
 // Middleware setup
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow any request from the same domain (but different ports)
+    if (origin && origin.includes("pike.replit.dev")) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 // Connection string
 const connectionUrl = process.env.MONGODB_URL as string;

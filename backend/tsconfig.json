@@ -4,10 +4,10 @@
     "esModuleInterop": true,
     "target": "es6",
     "strict": true,
-    "skipLibCheck": true, // Optionally ignore type-checking of libraries
-    "typeRoots": ["./node_modules/@types"], // Ensure this is present
+    "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"],
     "outDir": "./dist"
   },
-  "include": ["src/**/*"],
+  "include": ["index.ts"],
   "exclude": ["node_modules"]
 }

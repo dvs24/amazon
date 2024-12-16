@@ -62,6 +62,9 @@ const homePageSlice = createSlice({
     },
     addInputVal : (state , action) => {
       state.inputVal = action.payload;
+    },
+    emptyItemlist : (state , action) => {
+      state.itemList = [];
     }
   },
   extraReducers: (builder) => {
@@ -77,6 +80,6 @@ const homePageSlice = createSlice({
   },
 });
 
-export const { addItemToList, addUserInfo, removeItemToList, addInputVal } = homePageSlice.actions;
+export const { addItemToList, addUserInfo, removeItemToList, addInputVal, emptyItemlist } = homePageSlice.actions;
 
 export default homePageSlice.reducer;

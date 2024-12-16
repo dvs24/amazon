@@ -10,17 +10,17 @@ const Navbar = () => {
   const itemList = useSelector((state) => state.homePage.itemList);
   const dispatch = useDispatch();
 
-  const [searchVal ,setSearchVal] = useState("");
-  
+  const [searchVal, setSearchVal] = useState("");
+
   const handleSearch = () => {
-    dispatch(addInputVal(searchVal))
-  }
-  
+    dispatch(addInputVal(searchVal));
+  };
+
   return (
     <div className={styles.navBar}>
       <Link to="/">
         <button className={styles.logoImg}>
-          <img src={logo} alt="" className={styles.logoTag}/>
+          <img src={logo} alt="" className={styles.logoTag} />
         </button>
       </Link>
 
@@ -35,8 +35,10 @@ const Navbar = () => {
           className={styles.searchInput}
           placeholder="Search Products"
           onChange={(e) => setSearchVal(e.target.value)}
-        />  
-        <button className={styles.searchBtn} onClick={handleSearch}>search</button>
+        />
+        <button className={styles.searchBtn} onClick={handleSearch}>
+          search
+        </button>
       </div>
 
       <div className={styles.textWrapper}>
@@ -53,9 +55,9 @@ const Navbar = () => {
           <img src={cart} width={30} height={20} alt="" />
           <div className={styles.cartText}>cart</div>
         </Link>
-         {itemList.length > 0 && (
+        {itemList.length > 0 && (
           <div className={styles.cartNum}>{itemList?.length}</div>
-        )} 
+        )}
       </div>
     </div>
   );

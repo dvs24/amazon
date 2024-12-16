@@ -26,6 +26,8 @@ const Cart = () => {
       });
 
       setAllItemPrice(totalPrices);
+    } else {
+      setAllItemPrice(0);
     }
   }, [itemList, tempItemList]);
 

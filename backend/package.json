@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "type": "module",
-    "build": "npm install && tsc", // Ensures that the build process installs dependencies and compiles TS
-    "start": "node dist/index.js"  // Run the compiled JavaScript file from the dist folder
+    "build": "npm install && tsc",
+    "start": "node dist/index.js"
   },
   "author": "",
   "license": "ISC",

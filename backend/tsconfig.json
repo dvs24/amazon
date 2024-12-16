@@ -6,8 +6,8 @@
     "strict": true,
     "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types"],
-    "outDir": "./dist"
+    "outDir": "./dist"  // Compiled files will be outputted to the "dist" folder
   },
-  "include": ["index.ts"],
-  "exclude": ["node_modules"]
+  "include": ["index.ts"],  // Include the TypeScript file for compilation
+  "exclude": ["node_modules"]  // Exclude node_modules
 }
